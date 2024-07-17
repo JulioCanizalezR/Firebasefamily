@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "firebase-app-juan-pablo",
-    "slug": "firebase-app-juan-pablo",
+    "name": "firebase-app-20220997-20220664-20190037",
+    "slug": "firebase-app-20220997-20220664-20190037",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.sochiii.firebaseappjuanpablo"
+      "package": "com.20220997.firebaseapp20220664"
     },
     "web": {
       "favicon": "./assets/favicon.png"
