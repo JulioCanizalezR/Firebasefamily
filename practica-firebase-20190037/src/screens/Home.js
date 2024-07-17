@@ -1,52 +1,39 @@
-// Importación de bibliotecas y componentes necesarios
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { database, auth } from '../config/firebase'; // Importa la configuración de la base de datos de Firebase
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'; // Importa funciones de Firestore para consultas en tiempo real
 import CardProductos from '../components/CardProductos'; // Importa el componente de tarjeta de producto
 
-// Definición del componente principal Home
 const Home = ({ navigation }) => {
-    // Definición del estado local para almacenar los productos
     const [productos, setProductos] = useState([]);
 
-    // useEffect se ejecuta cuando el componente se monta
     useEffect(() => {
-        // Define una consulta a la colección 'productos' en Firestore, ordenada por el campo 'creado' en orden descendente
         const q = query(collection(database, 'productos'), orderBy('creado', 'desc'));
         
-        // Escucha cambios en la consulta de Firestore en tiempo real
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
-                // Empuja cada documento con su ID a la lista de docs
                 docs.push({ id: doc.id, ...doc.data() });
             });
-            // Actualiza el estado de productos con los datos recibidos
             setProductos(docs);
         });
 
-        // Limpieza de la suscripción al desmontar el componente
         return () => unsubscribe();
     }, []);
 
-    // Función para navegar a la pantalla 'Add'
     const goToAdd = () => { 
         navigation.navigate('Add');
     }
 
-    // Función para navegar a la pantalla 'SignUp' (Solo para probar)
     const handleLogout = async () => {
         try {
-            await auth.signOut(); // Función de Firebase para cerrar sesión
-            // Navegar a la pantalla de inicio de sesión después de cerrar sesión
+            await auth.signOut();
             navigation.navigate('LogIn'); // Ajusta el nombre de la pantalla de inicio de sesión
         } catch (error) {
             console.error('Error al cerrar sesión:', error);
-            // Puedes manejar el error aquí si lo deseas
         }
     };
-    // Función que renderiza cada item de la lista
+
     const renderItem = ({ item }) => (
         <CardProductos
             id={item.id}
@@ -57,12 +44,10 @@ const Home = ({ navigation }) => {
         />
     );
 
-    // Renderiza la interfaz del componente Home
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Productos Disponibles</Text>
 
-            {/* Muestra la lista de productos si hay elementos, de lo contrario muestra un mensaje */}
             {
                 productos.length !== 0 ?
                 <FlatList
@@ -72,35 +57,31 @@ const Home = ({ navigation }) => {
                     contentContainerStyle={styles.list}
                 />
                 : 
-                <Text style={styles.Subtitle}>No hay productos disponibles</Text>
+                <Text style={styles.subtitle}>No hay productos disponibles</Text>
             }
 
-            {/* Botón para navegar a la pantalla de agregar productos */}
             <TouchableOpacity
-                style={styles.Button}
+                style={styles.button}
                 onPress={goToAdd}>
-                <Text style={styles.ButtonText}>Agregar Producto</Text>
+                <Text style={styles.buttonText}>Agregar Producto</Text>
             </TouchableOpacity>
-            {/* Botón para regresar al login que simula cerrar sesión */}
+
             <TouchableOpacity
-                style={styles.Button}
+                style={styles.button}
                 onPress={handleLogout}>
-                <Text style={styles.ButtonText}>Cerrar sesión</Text>
+                <Text style={styles.buttonText}>Cerrar sesión</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
-
-// Exporta el componente Home como predeterminado
 export default Home;
 
-// Estilos para el componente Home
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
-        backgroundColor: '#B7DABE', // Color verde de login
+        backgroundColor: '#F0F0F0', // Color de fondo más claro
         justifyContent: 'center',
         padding: 20,
     },
@@ -109,23 +90,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+        color: '#333',
     },
-    Subtitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
+    subtitle: {
+        fontSize: 18,
         textAlign: 'center',
-        marginBottom: 10,
-        color:'#ff9800'
+        marginBottom: 20,
+        color: '#ff9800',
     },
-    Button: {
+    button: {
         backgroundColor: '#38A34C', // Color de botón verde
-        padding: 10,
-        borderRadius: 5,
+        padding: 15,
+        borderRadius: 8,
         marginTop: 20,
         marginHorizontal: 50,
-        paddingVertical: 20,
     },
-    ButtonText: {
+    buttonText: {
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',

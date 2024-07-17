@@ -6,9 +6,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import * as ImagePicker from 'expo-image-picker';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons'; // Importa el icono de AntDesign
 
-// Componente Add para agregar un nuevo producto
 const Add = ({ navigation }) => {
-    // Estado inicial del producto
     const [producto, setProducto] = useState({
         nombre: '',
         precio: 0,
@@ -19,12 +17,10 @@ const Add = ({ navigation }) => {
 
     const [loading, setLoading] = useState(false); // Estado de carga
 
-    // Función para navegar a la pantalla de inicio
     const goToHome = () => {
         navigation.navigate('Home');
     };
 
-    // Función para abrir la galería de imágenes del dispositivo
     const openGalery = async () => {
         try {
             let result = await ImagePicker.launchImageLibraryAsync({
@@ -46,7 +42,6 @@ const Add = ({ navigation }) => {
         }
     };
 
-    // Función para agregar el producto a Firestore
     const agregarProducto = async () => {
         setLoading(true); // Iniciar la carga
         try {
@@ -102,7 +97,7 @@ const Add = ({ navigation }) => {
                     keyboardType='numeric'
                 />
             </View>
-            <Text>Imagen:</Text>
+            <Text style={styles.label}>Imagen:</Text>
             <TouchableOpacity onPress={openGalery} style={styles.imagePicker}>
                 <Text style={styles.imagePickerText}>Seleccionar Imagen</Text>
             </TouchableOpacity>
@@ -125,11 +120,10 @@ const Add = ({ navigation }) => {
 
 export default Add;
 
-// Estilos del componente
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#B7DABE', // Color verde de login
+        backgroundColor: '#F0F0F0', // Color de fondo más claro
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
@@ -139,6 +133,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20,
         textAlign: 'center',
+        color: '#333',
     },
     input: {
         height: 40,
@@ -157,9 +152,14 @@ const styles = StyleSheet.create({
     inputContainer: {
         width: '100%',
         padding: 16,
-        backgroundColor: '#f8f9fa', // Color de fondo claro
+        backgroundColor: '#fff', // Color de fondo blanco
         marginBottom: 16,
         borderRadius: 10, // Ajuste para hacer los bordes más redondeados
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 2,
     },
     imagePicker: {
         backgroundColor: '#0288d1',
@@ -177,11 +177,12 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         marginBottom: 20,
+        borderRadius: 10,
     },
     button: {
         backgroundColor: '#38A34C', // Color de botón verde
-        padding: 10,
-        borderRadius: 5,
+        padding: 15,
+        borderRadius: 8,
         marginTop: 20,
         width: '100%',
         alignItems: 'center',

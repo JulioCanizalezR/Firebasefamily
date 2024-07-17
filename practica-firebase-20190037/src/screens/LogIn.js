@@ -61,10 +61,10 @@ const LoginScreen = () => {
         <View style={styles.container}>
           {/* Agregar la imagen del logo encima del contenedor del formulario */}
           <Image source={require('../../assets/logo.jpg')} style={styles.logo} />
-          <Text style={styles.title}>Alpha Store </Text>
+          <Text style={styles.title}>Alpha Store</Text>
           <Card style={styles.profileCard}>
             <Card.Content>
-              <Text style={styles.title}>Inicio de sesión </Text>
+              <Text style={styles.subtitle}>Inicio de sesión</Text>
               <View style={styles.inputContainer}>
                 <View style={styles.infoRow}>
                   <Text style={styles.label}>Correo electrónico:</Text>
@@ -105,7 +105,7 @@ const LoginScreen = () => {
                 onPress={() => navigation.navigate("SignUp")}
               >
                 <Text style={styles.loginText}>
-                  ¿No tienes cuenta? Registrate aquí
+                  ¿No tienes cuenta? Regístrate aquí
                 </Text>
               </TouchableOpacity>
             </Card.Content>
@@ -129,26 +129,32 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: windowHeight * 0.15,
     paddingTop: 50,
+    backgroundColor: "#F0F0F0",
   },
   logo: {
-    width: 150, // Ajusta el ancho según sea necesario
-    height: 150, // Ajusta la altura según sea necesario
-    resizeMode: 'contain', // Ajusta la forma en que la imagen se ajusta a su contenedor
-    marginBottom: 20, // Espacio opcional después de la imagen
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
+    marginBottom: 20,
     borderRadius: 100,
   },
   title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#333",
+  },
+  subtitle: {
     fontSize: 18,
-    marginBottom: 5,
+    marginBottom: 20,
+    color: "#555",
   },
   profileCard: {
     width: "100%",
-    marginTop: 10,
     borderRadius: 10,
-    padding: 10,
-    backgroundColor: "#B7DABE",
-    paddingTop: 20,
-    paddingBottom: 40,
+    padding: 20,
+    backgroundColor: "#FFF",
+    elevation: 3,
   },
   inputContainer: {
     marginBottom: 20,
@@ -178,17 +184,6 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     flex: 1,
   },
-  pickerText: {
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    color: "black",
-    flex: 1,
-  },
-  fila: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
   button: {
     width: "100%",
     paddingVertical: 10,
@@ -197,22 +192,8 @@ const styles = StyleSheet.create({
   },
   loginText: {
     marginTop: 20,
-    color: "black",
-  },
-  avatarContainer: {
-    alignItems: "center",
-    marginVertical: 20,
-  },
-  avatarImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-  },
-  backgroundImage: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
+    color: "#38A34C",
+    textAlign: "center",
   },
   errorText: {
     color: 'red',

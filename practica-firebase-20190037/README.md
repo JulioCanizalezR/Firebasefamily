@@ -1,9 +1,3 @@
-ESTUDIANTES.
-
-Juan Pablo Flores Díaz - 20220599.
-
-Xochilt Gabriela López Pineda - 20220018.
-
 DEPENDENCIAS DEL PROYECTO.
 
 @expo/vector-icons: Provee una amplia colección de íconos personalizables para usarse en aplicaciones React Native.
