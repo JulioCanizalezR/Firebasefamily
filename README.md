@@ -6,6 +6,7 @@ Adiel Enrique Montequepue Juarez
 
 Julio Cesar Canizales Rivas
 
+
 DEPENDENCIAS DEL PROYECTO.
 
 @expo/vector-icons: Provee una amplia colección de íconos personalizables para usarse en aplicaciones React Native.
