@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
-import { database, auth } from '../config/firebase'; // Importa la configuración de la base de datos de Firebase
+import { database, authentication } from '../config/firebase'; // Importa la configuración de la base de datos de Firebase
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'; // Importa funciones de Firestore para consultas en tiempo real
 import CardProductos from '../components/CardProductos'; // Importa el componente de tarjeta de producto
 
@@ -27,7 +27,7 @@ const Home = ({ navigation }) => {
 
     const handleLogout = async () => {
         try {
-            await auth.signOut();
+            await authentication.signOut();
             navigation.navigate('LogIn'); // Ajusta el nombre de la pantalla de inicio de sesión
         } catch (error) {
             console.error('Error al cerrar sesión:', error);

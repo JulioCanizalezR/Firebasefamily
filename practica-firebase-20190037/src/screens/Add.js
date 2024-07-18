@@ -198,5 +198,6 @@ const styles = StyleSheet.create({
         color: '#333',
         flexDirection: 'row',
         alignItems: 'center',
+        
     },
 });

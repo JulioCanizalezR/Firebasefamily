@@ -55,7 +55,7 @@ const SignUp = () => {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.container}>
           <Image source={require('../../assets/logo.jpg')} style={styles.logo} />
-          <Text style={styles.title}>Alpha Store</Text>
+          <Text style={styles.title}>Tienda Family</Text>
           <Card style={styles.profileCard}>
             <Card.Content>
               <Text style={styles.title}>Registrarse</Text>
