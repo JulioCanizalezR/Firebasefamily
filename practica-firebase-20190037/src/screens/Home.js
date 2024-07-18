@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
-        backgroundColor: '#F0F0F0', // Color de fondo más claro
+        backgroundColor: '#FFFFFF', // Color de fondo más claro
         justifyContent: 'center',
         padding: 20,
     },
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         color: '#ff9800',
     },
     button: {
-        backgroundColor: '#38A34C', // Color de botón verde
+        backgroundColor: '#E52020', // Color de botón verde
         padding: 15,
         borderRadius: 8,
         marginTop: 20,

@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: windowHeight * 0.15,
     paddingTop: 50,
-    backgroundColor: "#F0F0F0",
+    backgroundColor: "#FFFFFF",
   },
   logo: {
     width: 150,
@@ -142,18 +142,18 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#333",
+    color: "#000000",
   },
   subtitle: {
     fontSize: 18,
     marginBottom: 20,
-    color: "#555",
+    color: "#000000",
   },
   profileCard: {
     width: "100%",
     borderRadius: 10,
     padding: 20,
-    backgroundColor: "#FFF",
+    backgroundColor: "#DEDEDE",
     elevation: 3,
   },
   inputContainer: {
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: "gray",
+    color: "#000000",
     marginBottom: 5,
   },
   infoRow: {
@@ -188,11 +188,11 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingVertical: 10,
     marginTop: 10,
-    backgroundColor: "#38A34C",
+    backgroundColor: "#E52020",
   },
   loginText: {
     marginTop: 20,
-    color: "#38A34C",
+    color: "#E52020",
     textAlign: "center",
   },
   errorText: {

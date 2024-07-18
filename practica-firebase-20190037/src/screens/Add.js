@@ -123,7 +123,7 @@ export default Add;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F0F0F0', // Color de fondo más claro
+        backgroundColor: '#FFFFFF', // Color de fondo más claro
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         width: '100%',
         padding: 16,
-        backgroundColor: '#fff', // Color de fondo blanco
+        backgroundColor: '#F4F1F1', // Color de fondo blanco
         marginBottom: 16,
         borderRadius: 10, // Ajuste para hacer los bordes más redondeados
         shadowColor: '#000',
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     imagePicker: {
-        backgroundColor: '#0288d1',
+        backgroundColor: '#808080',
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     button: {
-        backgroundColor: '#38A34C', // Color de botón verde
+        backgroundColor: '#E52020', // Color de botón verde
         padding: 15,
         borderRadius: 8,
         marginTop: 20,

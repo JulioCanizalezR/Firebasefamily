@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: "#B7DABE",
+    backgroundColor: "#DEDEDE",
     paddingTop: 20,
     paddingBottom: 40,
   },
@@ -180,11 +180,11 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingVertical: 10,
     marginTop: 10,
-    backgroundColor: "#38A34C",
+    backgroundColor: "#E52020",
   },
   loginText: {
     marginTop: 20,
-    color: "black",
+    color: "#E52020",
     textAlign: 'center',
   },
 });

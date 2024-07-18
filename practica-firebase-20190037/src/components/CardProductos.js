@@ -75,7 +75,7 @@ const CardProductos = ({ id, nombre, precio, vendido, imagen }) => {
 // Estilos del componente
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#fff',
+        backgroundColor: '#E7E6E6',
         padding: 15,
         margin: 10,
         borderRadius: 10,
